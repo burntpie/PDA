@@ -30,7 +30,7 @@ def results_DA():
             DA["date_created"] = DA["date_created"].strftime("%b %d %Y %H:%M:%S")
             DAs.append(DA)
 
-        print(DAs)
+        # print(DAs)
         return render_template('result-DA.html', DAs=DAs)
 
 

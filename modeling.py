@@ -89,17 +89,23 @@ def misinformation_check(input_text, trusted_sources, article_count):
                         continue
                     full_article += " "
                     full_article += element.text.strip()
-                
-                summarized_article = summarize(full_article)
-                similarity_score = similarity_check(input_text, full_article)
-
-                similarity_list.append(similarity_score)
             except Exception as e:
                 title = None
                 full_article = None
-                summarized_article = None
-                similarity_score = None
                 print(f"Scraping Error! - {e}")
+
+            try:
+                summarized_article = summarize(full_article)
+            except Exception as e:
+                summarized_article = None
+                print(f"Summarizing Error! - {e}")
+
+            try:
+                similarity_score = similarity_check(input_text, full_article)
+                similarity_list.append(similarity_score)
+            except Exception as e:
+                similarity_score = None
+                print(f"Similarity Comparision Error! - {e}")
 
         else:
             print(f"Unable to retrieve page - Error Code {page.status_code}")
