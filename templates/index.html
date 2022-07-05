@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+<!-- sweetalert js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.12.5/dist/sweetalert2.all.min.js"></script>
+{% endblock %}
+
+{% block body %}
+<div class="homepage">
+    <h1>Welcome to</h1>
+    <h2>Platform for Disinformation Analysis</h2>
+</div>
+{% endblock %}

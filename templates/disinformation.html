@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/disinformation.css') }}">
+
+{% endblock %}
+
+{% block body %}
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+      <script>
+        Swal.fire({
+          title: "{{ category.title() }}!",
+          text: "{{ message }}",
+          icon: "{{ category }}",
+          closeOnConfirm: false
+        })
+      </script>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+<h1>Disinformation Analysis (Similarity Model)</h1>
+<form method="POST">
+    <textarea name="text" placeholder="Input Text Here" rows="10" cols="109" required></textarea>
+    
+    <fieldset>
+      <legend>Choose your trusted sources</legend>
+      <div>
+        <input type="checkbox" id="CNA" name="CNA" checked>
+        <label for="CNA">CNA</label>
+      </div>
+      <div>
+        <input type="checkbox" id="today" name="today">
+        <label for="today">today</label>
+      </div>
+      <div>
+        <input type="checkbox" id="gov.sg" name="gov.sg">
+        <label for="gov.sg">gov.sg</label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <div>
+        <legend>Choose the Number of Articles to Compare with (Recommended: 3~10)</legend>
+        <input type="text" name="article_count">
+      </div>
+    </fieldset>
+    
+    <input class="submit_button" type="submit">
+</form>
+<div></div>
+{% endblock %}

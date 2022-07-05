@@ -1,0 +1,52 @@
+  h1 {
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  form {
+    text-align: left;
+    margin-bottom: 5em;
+    width: auto;
+    position: fixed;
+  }
+
+  .textarea {
+    position: fixed;
+  }
+
+  .fieldset {
+    display: block;
+    position: fixed;
+    float: right;
+  }
+  
+  label {
+    font: 1rem 'Fira Sans', sans-serif;
+  }
+
+  input {
+    margin: .4rem;
+  }
+
+  .submit_button {
+    border: none;
+    background: #404040;
+    color: #ffffff;
+    font-weight: 100;
+    padding: 20px;
+    text-transform: uppercase;
+    border-radius: 6px;
+    display: inline-block;
+    transition: all 0.3s ease 0s;
+
+    float: right;
+    margin-top: 1em;
+  }
+
+  .submit_button:hover {
+    color: #404040;
+    font-weight: 700;
+    background: none;
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    transition: all 0.3s ease 0s;
+  }

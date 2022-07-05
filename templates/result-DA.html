@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<!-- bootstrap CDN -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+{% endblock %}
+
+{% block body %}
+<div>
+    {% for DA in DAs %}
+        <div class="card p-1 m-3">
+            <div class="card-body">
+                <h5 class="card-title">input_text: {{ DA.input_text }}</h5>
+                <p class="card-text text-muted">date_created: {{ DA.date_created }}</p>
+                <p class="card-text">true_score: {{ DA.true_score }}</p>
+                <p class="card-text">search_term: {{ DA.search_term }}</p>
+                
+                <h5 class="card-title">Article0</h5>
+                <p class="card-text">url: {{ DA.Article0.url }}</p>
+                <p class="card-text">title: {{ DA.Article0.title }}</p>
+                <p class="card-text">full_article: {{ DA.Article0.full_article }}</p>
+                <p class="card-text">summarized_article: {{ DA.Article0.summarized_article }}</p>
+                <p class="card-text">similarity_score: {{ DA.Article0.similarity_score }}</p>
+                
+
+                <h5 class="card-title">Article1</h5>
+                <p class="card-text">url: {{ DA.Article1.url }}</p>
+                <p class="card-text">title: {{ DA.Article1.title }}</p>
+                <p class="card-text">full_article: {{ DA.Article1.full_article }}</p>
+                <p class="card-text">summarized_article: {{ DA.Article1.summarized_article }}</p>
+                <p class="card-text">similarity_score: {{ DA.Article1.similarity_score }}</p>
+                
+
+                <h5 class="card-title">Article2</h5>
+                <p class="card-text">url: {{ DA.Article2.url }}</p>
+                <p class="card-text">title: {{ DA.Article2.title }}</p>
+                <p class="card-text">full_article: {{ DA.Article2.full_article }}</p>
+                <p class="card-text">summarized_article: {{ DA.Article2.summarized_article }}</p>
+                <p class="card-text">similarity_score: {{ DA.Article2.similarity_score }}</p>
+                
+                
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
