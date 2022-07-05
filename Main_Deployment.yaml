@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: main-deployment
+  labels:
+    app: main-server
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: main-server
+  template:
+    metadata:
+      labels:
+        app: main-server
+    spec:
+      containers:
+      - name: main
+        image: ryanangweihao/rang012_docker_repository:Disinformation_JIECHUNG
+        ports:
+        - containerPort: 5000
+      imagePullSecrets:
+      - name: regcred
